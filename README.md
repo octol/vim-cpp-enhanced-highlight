@@ -14,7 +14,6 @@ Based on:
 - http://www.vim.org/scripts/script.php?script_id=1640
 - http://www.vim.org/scripts/script.php?script_id=3064
 
-Jon Haggblad 
-<jon@haeggblad.com>
+Jon Haggblad <jon@haeggblad.com>
 
 Last update: 17 May 2013
