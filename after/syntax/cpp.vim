@@ -2,10 +2,11 @@
 " Language: C++ Additions
 " Maintainer: Jon Haggblad <jon@haeggblad.com>
 " URL: http://www.haeggblad.com
-" Last Change:  17 May 2013
-" Version: 0.1
+" Last Change: 26 Jan 2014
+" Version: 0.2
 " Changelog:
 "   0.1 - initial version.
+"   0.2 - C++14
 "
 " Additional Vim syntax highlighting for C++ (including C++11)
 "
@@ -139,6 +140,7 @@ syntax keyword cppSTLfunction atexit
 syntax keyword cppSTLfunction atof
 syntax keyword cppSTLfunction atoi
 syntax keyword cppSTLfunction atol
+syntax keyword cppSTLfunction atoll
 syntax keyword cppSTLfunction back
 syntax keyword cppSTLfunction back_inserter
 syntax keyword cppSTLfunction bad
@@ -423,8 +425,11 @@ syntax keyword cppSTLfunction strrchr
 syntax keyword cppSTLfunction strspn
 syntax keyword cppSTLfunction strstr
 syntax keyword cppSTLfunction strtod
+syntax keyword cppSTLfunction strtof
+syntax keyword cppSTLfunction strtold
 syntax keyword cppSTLfunction strtok
 syntax keyword cppSTLfunction strtol
+syntax keyword cppSTLfunction strtoll
 syntax keyword cppSTLfunction strtoul
 syntax keyword cppSTLfunction strxfrm
 syntax keyword cppSTLfunction substr
@@ -634,6 +639,84 @@ syntax keyword cppSTLtype wostringstream
 syntax keyword cppSTLtype wstring
 syntax keyword cppSTLtype wstringbuf
 syntax keyword cppSTLtype wstringstream
+
+syntax keyword cppSTLfunction mblen
+syntax keyword cppSTLfunction mbtowc
+syntax keyword cppSTLfunction wctomb
+syntax keyword cppSTLfunction mbstowcs
+syntax keyword cppSTLfunction wcstombs
+syntax keyword cppSTLfunction mbsinit
+syntax keyword cppSTLfunction btowc
+syntax keyword cppSTLfunction wctob
+syntax keyword cppSTLfunction mbrlen
+syntax keyword cppSTLfunction mbrtowc
+syntax keyword cppSTLfunction wcrtomb
+syntax keyword cppSTLfunction mbsrtowcs
+syntax keyword cppSTLfunction wcsrtombs
+
+syntax keyword cppSTLtype mbstate_t
+
+syntax keyword cppSTLconstant MB_LEN_MAX
+syntax keyword cppSTLconstant MB_CUR_MAX
+syntax keyword cppSTLconstant __STDC_UTF_16__
+syntax keyword cppSTLconstant __STDC_UTF_32__
+
+syntax keyword cppSTLfunction iswalnum
+syntax keyword cppSTLfunction iswalpha
+syntax keyword cppSTLfunction iswlower
+syntax keyword cppSTLfunction iswupper
+syntax keyword cppSTLfunction iswdigit
+syntax keyword cppSTLfunction iswxdigit
+syntax keyword cppSTLfunction iswcntrl
+syntax keyword cppSTLfunction iswgraph
+syntax keyword cppSTLfunction iswspace
+syntax keyword cppSTLfunction iswprint
+syntax keyword cppSTLfunction iswpunct
+syntax keyword cppSTLfunction iswctype
+syntax keyword cppSTLfunction wctype
+
+syntax keyword cppSTLfunction towlower
+syntax keyword cppSTLfunction towupper
+syntax keyword cppSTLfunction towctrans
+syntax keyword cppSTLfunction wctrans
+
+syntax keyword cppSTLfunction wcstol
+syntax keyword cppSTLfunction wcstoll
+syntax keyword cppSTLfunction wcstoul
+syntax keyword cppSTLfunction wcstoull
+syntax keyword cppSTLfunction wcstof
+syntax keyword cppSTLfunction wcstod
+syntax keyword cppSTLfunction wcstold
+
+syntax keyword cppSTLfunction wcscpy
+syntax keyword cppSTLfunction wcsncpy
+syntax keyword cppSTLfunction wcscat
+syntax keyword cppSTLfunction wcsncat
+syntax keyword cppSTLfunction wcsxfrm
+syntax keyword cppSTLfunction wcslen
+syntax keyword cppSTLfunction wcscmp
+syntax keyword cppSTLfunction wcsncmp
+syntax keyword cppSTLfunction wcscoll
+syntax keyword cppSTLfunction wcschr
+syntax keyword cppSTLfunction wcsrchr
+syntax keyword cppSTLfunction wcsspn
+syntax keyword cppSTLfunction wcscspn
+syntax keyword cppSTLfunction wcspbrk
+syntax keyword cppSTLfunction wcsstr
+syntax keyword cppSTLfunction wcstok
+syntax keyword cppSTLfunction wmemcpy
+syntax keyword cppSTLfunction wmemmove
+syntax keyword cppSTLfunction wmemcmp
+syntax keyword cppSTLfunction wmemchr
+syntax keyword cppSTLfunction wmemset
+
+syntax keyword cppSTLtype wctrans_t
+syntax keyword cppSTLtype wctype_t
+syntax keyword cppSTLtype wint_t
+
+syntax keyword cppSTLconstant WEOF
+syntax keyword cppSTLconstant WCHAR_MIN
+syntax keyword cppSTLconstant WCHAR_MAX
 
 if !exists("cpp_no_cpp11")
     syntax keyword cppSTLtype nullptr_t max_align_t
@@ -968,6 +1051,7 @@ if !exists("cpp_no_cpp11")
 
     " locale
     syntax keyword cppSTLfunction isblank
+    syntax keyword cppSTLfunction iswblank
     syntax keyword cppSTLtype wstring_convert
     syntax keyword cppSTLtype wbuffer_convert
     syntax keyword cppSTLtype codecvt_utf8
@@ -1058,9 +1142,9 @@ if !exists("cpp_no_cpp11")
     syntax keyword cppSTLfunction atomic_init
     syntax keyword cppSTLfunction ATOMIC_VAR_INIT
     syntax keyword cppSTLconstant ATOMIC_FLAG_INIT
-    syntax keyword cppSTLconstant kill_dependency
-    syntax keyword cppSTLconstant atomic_thread_fence
-    syntax keyword cppSTLconstant atomic_signal_fence
+    syntax keyword cppSTLfunction kill_dependency
+    syntax keyword cppSTLfunction atomic_thread_fence
+    syntax keyword cppSTLfunction atomic_signal_fence
 
     " thread
     syntax keyword cppSTLtype thread
@@ -1099,8 +1183,8 @@ if !exists("cpp_no_cpp11")
     syntax keyword cppSTLtype future
     syntax keyword cppSTLtype shared_future
 
-    "syntax keyword cppSTLfunction async
-    "syntax keyword cppSTLenum launch
+    syntax keyword cppSTLfunction async
+    syntax keyword cppSTLenum launch
 
     syntax keyword cppSTLenum future_status
     syntax keyword cppSTLenum future_errc
@@ -1152,7 +1236,36 @@ if !exists("cpp_no_cpp11")
 
     "limits
     syntax keyword cppSTLfunction lowest
-endif
+
+    "cuchar
+    syntax keyword cppSTLfunction mbrtoc16
+    syntax keyword cppSTLfunction c16rtomb
+    syntax keyword cppSTLfunction mbrtoc32
+    syntax keyword cppSTLfunction c32rtomb
+
+    "cinttypes
+    syntax keyword cppSTLfunction strtoimax
+    syntax keyword cppSTLfunction strtoumax
+    syntax keyword cppSTLfunction wcstoimax
+    syntax keyword cppSTLfunction wcstoumax
+
+endif " C++11
+
+if !exists("cpp_no_cpp14")
+
+    "optional
+    syntax keyword cppSTLtype optional
+    "syntax keyword cppSTLfunction value
+    syntax keyword cppSTLfunction value_or
+    syntax keyword cppSTLfunction make_optional
+
+    "dynarray
+    syntax keyword cppSTLtype dynarray
+
+    "thread
+    syntax keyword cppSTLtype shared_mutex
+    syntax keyword cppSTLtype shared_lock
+endif " C++14
 
 " Default highlighting
 if version >= 508 || !exists("did_cpp_syntax_inits")
