@@ -1016,6 +1016,44 @@ if !exists("cpp_no_cpp11")
     syntax keyword cppSTLfunction atomic_flag_clear
     syntax keyword cppSTLfunction atomic_flag_clear_explicit
 
+    syntax keyword cppSTLtype atomic_bool
+    syntax keyword cppSTLtype atomic_char
+    syntax keyword cppSTLtype atomic_schar
+    syntax keyword cppSTLtype atomic_uchar
+    syntax keyword cppSTLtype atomic_short
+    syntax keyword cppSTLtype atomic_ushort
+    syntax keyword cppSTLtype atomic_int
+    syntax keyword cppSTLtype atomic_uint
+    syntax keyword cppSTLtype atomic_long
+    syntax keyword cppSTLtype atomic_ulong
+    syntax keyword cppSTLtype atomic_llong
+    syntax keyword cppSTLtype atomic_ullong
+    syntax keyword cppSTLtype atomic_char16_t
+    syntax keyword cppSTLtype atomic_char32_t
+    syntax keyword cppSTLtype atomic_wchar_t
+    syntax keyword cppSTLtype atomic_int_least8_t
+    syntax keyword cppSTLtype atomic_uint_least8_t
+    syntax keyword cppSTLtype atomic_int_least16_t
+    syntax keyword cppSTLtype atomic_uint_least16_t
+    syntax keyword cppSTLtype atomic_int_least32_t
+    syntax keyword cppSTLtype atomic_uint_least32_t
+    syntax keyword cppSTLtype atomic_int_least64_t
+    syntax keyword cppSTLtype atomic_uint_least64_t
+    syntax keyword cppSTLtype atomic_int_fast8_t
+    syntax keyword cppSTLtype atomic_uint_fast8_t
+    syntax keyword cppSTLtype atomic_int_fast16_t
+    syntax keyword cppSTLtype atomic_uint_fast16_t
+    syntax keyword cppSTLtype atomic_int_fast32_t
+    syntax keyword cppSTLtype atomic_uint_fast32_t
+    syntax keyword cppSTLtype atomic_int_fast64_t
+    syntax keyword cppSTLtype atomic_uint_fast64_t
+    syntax keyword cppSTLtype atomic_intptr_t
+    syntax keyword cppSTLtype atomic_uintptr_t
+    syntax keyword cppSTLtype atomic_size_t
+    syntax keyword cppSTLtype atomic_ptrdiff_t
+    syntax keyword cppSTLtype atomic_intmax_t
+    syntax keyword cppSTLtype atomic_uintmax_t
+
     syntax keyword cppSTLtype memory_order
     syntax keyword cppSTLfunction atomic_init
     syntax keyword cppSTLfunction ATOMIC_VAR_INIT
