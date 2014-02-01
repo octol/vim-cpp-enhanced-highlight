@@ -445,7 +445,6 @@ syntax keyword cppSTLfunction tellg
 syntax keyword cppSTLfunction tellp
 syntax keyword cppSTLfunction test
 syntax keyword cppSTLfunction time
-syntax keyword cppSTLfunction time_t
 syntax keyword cppSTLfunction tmpfile
 syntax keyword cppSTLfunction tmpnam
 syntax keyword cppSTLfunction tolower
@@ -620,6 +619,7 @@ syntax keyword cppSTLtype stringbuf
 syntax keyword cppSTLtype stringstream
 syntax keyword cppSTLtype temporary_buffer
 syntax keyword cppSTLtype test_type
+syntax keyword cppSTLtype time_t
 syntax keyword cppSTLtype tm
 syntax keyword cppSTLtype traits_type
 syntax keyword cppSTLtype type_info
