@@ -182,6 +182,7 @@ syntax keyword cppSTLfunction destroy
 syntax keyword cppSTLfunction difftime
 syntax keyword cppSTLfunction distance
 syntax keyword cppSTLfunction div
+syntax keyword cppSTLfunction duration_cast
 syntax keyword cppSTLfunction empty
 syntax keyword cppSTLfunction end
 syntax keyword cppSTLfunction eof
