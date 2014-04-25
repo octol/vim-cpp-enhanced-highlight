@@ -1,4 +1,4 @@
-Additional Vim syntax highlighting for C++
+vim.cpp - additional vim c++ syntax highlighting
 ------------------------------------------
 
 This file contains additional syntax highlighting that I use for my C++11
@@ -8,18 +8,44 @@ in the standard library / boost.
 
 Development is done at: http://github.com/octol/vim-cpp-enhanced-highlight
 
-To install:
+Installation instructions
 -----------
+Follow one of the sets of directions below and reload vim afterwards.
 
-Either copy the cpp.vim file to ~/.vim/after/syntax/cpp.vim
-or install using Vundle by adding
+#### Via git + copy and paste
+If you don't have either Vundle or Pathogen installed, you may copy and
+paste the cpp.vim file into your .vim/after/syntax folder. The following
+shell commands will help you do so.
+```sh
+cd ~/.vim
+git clone https://github.com/octol/vim-cpp-enhanced-highlight.git
+mkdir -p after/syntax/
+mv vim-cpp-enhanced-highlight/after/syntax/cpp.vim after/syntax/cpp.vim
+rm -rf vim-cpp-enhanced-highlight
+```
 
-    Bundle 'octol/vim-cpp-enhanced-highlight'
+#### Via git + Vundle
+If you have [vundle](https://github.com/gmarik/Vundle.vim) installed, you
+can install the plugin with the follow instructions.
+```sh
+cd ~/.vim
+git clone https://github.com/octol/vim-cpp-enhanced-highlight.git
+```
+Then, add the following to your .vimrc:
+```vim
+Bundle 'octol/vim-cpp-enhanced-highlight'
+```
 
-to your .vimrc file. 
+#### Via git submodule + Pathogen
+If you have [pathogen](https://github.com/tpope/vim-pathogen) installed,
+and you prefer to use git submodules, the following bash commands will help
+you do so.
+```sh
+cd ~/.vim
+git submodule add https://github.com/octol/vim-cpp-enhanced-highlight.git bundle/syntax/
+```
 
-
-Based on:
+Background information
 ---------
 
 - http://stackoverflow.com/questions/736701/class-function-names-highlighting-in-vim
@@ -30,4 +56,4 @@ Based on:
 
 Jon Haggblad <jon@haeggblad.com>
 
-Last update: 17 May 2013
+Last update: 25 April 2014
