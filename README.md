@@ -1,7 +1,7 @@
 vim.cpp - additional vim c++ syntax highlighting
 ------------------------------------------
 
-This file contains additional syntax highlighting that I use for my C++11
+This file contains additional syntax highlighting that I use for my C++11/14
 development in Vim. Compared to the standard syntax highlighting for C++ it
 adds highlighting of (user defined) functions and the containers and types 
 in the standard library / boost.
@@ -24,17 +24,14 @@ mv vim-cpp-enhanced-highlight/after/syntax/cpp.vim after/syntax/cpp.vim
 rm -rf vim-cpp-enhanced-highlight
 ```
 
-#### Via git + Vundle
+#### Via Vundle
 If you have [vundle](https://github.com/gmarik/Vundle.vim) installed, you
-can install the plugin with the follow instructions.
-```sh
-cd ~/.vim
-git clone https://github.com/octol/vim-cpp-enhanced-highlight.git
-```
-Then, add the following to your .vimrc:
+can install the plugin by adding 
 ```vim
 Bundle 'octol/vim-cpp-enhanced-highlight'
 ```
+to your .vimrc and running `:BundleInstall` from vim.
+
 
 #### Via git submodule + Pathogen
 If you have [pathogen](https://github.com/tpope/vim-pathogen) installed,
