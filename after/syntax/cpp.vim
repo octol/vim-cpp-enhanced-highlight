@@ -2,12 +2,13 @@
 " Language: C++ Additions
 " Maintainer: Jon Haggblad <jon@haeggblad.com>
 " URL: http://www.haeggblad.com
-" Last Change: 21 Apr 2014
-" Version: 0.3
+" Last Change: 6 Sep 2014
+" Version: 0.4
 " Changelog:
 "   0.1 - initial version.
 "   0.2 - C++14
 "   0.3 - Incorporate lastest changes from Mizuchi/STL-Syntax
+"   0.4 - Add template function highlight
 "
 " Additional Vim syntax highlighting for C++ (including C++11)
 "
@@ -29,15 +30,23 @@
 " Based on the discussion in:
 "   http://stackoverflow.com/questions/736701/class-function-names-highlighting-in-vim
 " -----------------------------------------------------------------------------
+
+" Functions
 syn match    cCustomParen    "(" contains=cParen contains=cCppParen
 syn match    cCustomFunc     "\w\+\s*(\@=" contains=cCustomParen
+
+" Template functions
+syn region   cCustomAngleBrackets transparent matchgroup=cCppParen start='[[:space:]<]\@<!<<\@!' end='>' contains=ALLBUT,@cParenGroup,cCppParen,cCppString,@Spell
+syn match    cCustomBrack    "<" contains=cCustomAngleBrackets
+syn match    cCustomTemplateFunc     "\w\+\s*<.*>(\@=" contains=cCustomBrack
+
+" Class and namespace scope
 syn match    cCustomScope    "::"
 syn match    cCustomClass    "\w\+\s*::" contains=cCustomScope
 
 hi def link cCustomFunc  Function
-
-" Uncomment this to also highlight 'class::' and 'namespace::'
-"hi def link cCustomClass Function
+hi def link cCustomTemplateFunc  Function
+"hi def link cCustomClass Function  " disabled for now
 
 " Alternative syntax that is used in:
 "  http://www.vim.org/scripts/script.php?script_id=3064
