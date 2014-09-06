@@ -12,10 +12,9 @@ Installation instructions
 -----------
 Follow one of the sets of directions below and reload vim afterwards.
 
-#### Via git + copy and paste
-If you don't have either Vundle or Pathogen installed, you may copy and
-paste the cpp.vim file into your .vim/after/syntax folder. The following
-shell commands will help you do so.
+#### Git + copy and paste
+If you don't have either Vundle or Pathogen installed, copy and
+paste the cpp.vim file to .vim/after/syntax.
 ```sh
 cd ~/.vim
 git clone https://github.com/octol/vim-cpp-enhanced-highlight.git
@@ -24,16 +23,16 @@ mv vim-cpp-enhanced-highlight/after/syntax/cpp.vim after/syntax/cpp.vim
 rm -rf vim-cpp-enhanced-highlight
 ```
 
-#### Via Vundle
-If you have [vundle](https://github.com/gmarik/Vundle.vim) installed, you
-can install the plugin by adding 
+#### Vundle
+If you have [vundle](https://github.com/gmarik/Vundle.vim) installed, 
+add 
 ```vim
-Bundle 'octol/vim-cpp-enhanced-highlight'
+Plugin 'octol/vim-cpp-enhanced-highlight'
 ```
-to your .vimrc and running `:BundleInstall` from vim.
+to your .vimrc and run `:BundleInstall` from vim.
 
 
-#### Via git submodule + Pathogen
+#### Git submodule + Pathogen
 If you have [pathogen](https://github.com/tpope/vim-pathogen) installed,
 and you prefer to use git submodules, the following bash commands will help
 you do so.
@@ -53,4 +52,4 @@ Background information
 
 Jon Haggblad <jon@haeggblad.com>
 
-Last update: 25 April 2014
+Last update: 6 September 2014
