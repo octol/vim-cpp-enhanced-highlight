@@ -45,7 +45,9 @@ syn match    cCustomScope    "::"
 syn match    cCustomClass    "\w\+\s*::" contains=cCustomScope
 
 hi def link cCustomFunc  Function
-hi def link cCustomTemplateFunc  Function
+if exists('g:cpp_experimental_template_highlight') && g:cpp_experimental_template_highlight
+    hi def link cCustomTemplateFunc  Function
+endif
 "hi def link cCustomClass Function  " disabled for now
 
 " Alternative syntax that is used in:
