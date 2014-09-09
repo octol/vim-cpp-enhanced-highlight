@@ -6,9 +6,18 @@ development in Vim. Compared to the standard syntax highlighting for C++ it
 adds highlighting of (user defined) functions and the containers and types 
 in the standard library / boost.
 
-Latest addition is highlighting of template functions.
-
 Development is done at: http://github.com/octol/vim-cpp-enhanced-highlight
+
+Optional features
+-----------------
+
+Highlighting of template functions is enabled by setting
+
+```vim
+let g:cpp_experimental_template_highlight = 1
+```
+
+_Note: this does not yet work for nested template arguments._
 
 Installation instructions
 -------------------------
