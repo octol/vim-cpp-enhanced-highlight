@@ -8,6 +8,8 @@ the standard library / boost.
 
 Development is done at: http://github.com/octol/vim-cpp-enhanced-highlight
 
+![Screenshot](http://www.haeggblad.com/vim/screenshot.png)
+
 Optional features
 -----------------
 
