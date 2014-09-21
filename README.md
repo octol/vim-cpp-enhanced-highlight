@@ -1,23 +1,27 @@
 vim.cpp - additional vim c++ syntax highlighting
 ------------------------------------------------
 
-This file contains additional syntax highlighting that I use for my C++11/14
+This file contains additional syntax highlighting that I use for C++11/14
 development in Vim. Compared to the standard syntax highlighting for C++ it
-adds highlighting of (user defined) functions and the containers and types 
-in the standard library / boost.
+adds highlighting of (user defined) functions and the containers and types in
+the standard library / boost.
 
 Development is done at: http://github.com/octol/vim-cpp-enhanced-highlight
 
 Optional features
 -----------------
 
-Highlighting of template functions is enabled by setting
+Highlighting of class scope if disabled by default. To enable set
+```vim
+let g:cpp_class_scope_highlight = 1
+```
 
+Highlighting of template functions is enabled by setting
 ```vim
 let g:cpp_experimental_template_highlight = 1
 ```
-
-_Note: this does not yet work for nested template arguments._
+_Note: C++ template syntax is notoriously difficult to parse, so don't expect
+this feature to be perfect._
 
 Installation instructions
 -------------------------
@@ -62,4 +66,4 @@ Background information
 
 Jon Haggblad <jon@haeggblad.com>
 
-Last update: 6 September 2014
+Last update: 21 September 2014
