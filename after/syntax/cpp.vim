@@ -35,21 +35,20 @@
 " Functions
 syn match   cCustomParen    "(" contains=cParen contains=cCppParen
 syn match   cCustomFunc     "\w\+\s*(\@=" contains=cCustomParen
+hi def link cCustomFunc  Function
 
 " Template functions
-syn region  cCustomAngleBrackets matchgroup=AngleBracketContents start="\v%(<operator\_s*)@<!%(%(\_i|template\_s*)@<=\<[<=]@!|\<@<!\<[[:space:]<=]@!)" end='>' contains=@cppSTLgroup,cppStructure,cType,cCustomClass,cCustomAngleBrackets,cNumbers
-syn match   cCustomBrack    "<\|>" contains=cCustomAngleBrackets
-syn match   cCustomTemplateFunc "\w\+\s*<.*>(\@=" contains=cCustomBrack,cCustomAngleBrackets
-
-" Class and namespace scope
-syn match    cCustomScope    "::"
-syn match    cCustomClass    "\w\+\s*::" contains=cCustomScope
-
-hi def link cCustomFunc  Function
 if exists('g:cpp_experimental_template_highlight') && g:cpp_experimental_template_highlight
+    syn region  cCustomAngleBrackets matchgroup=AngleBracketContents start="\v%(<operator\_s*)@<!%(%(\_i|template\_s*)@<=\<[<=]@!|\<@<!\<[[:space:]<=]@!)" end='>' contains=@cppSTLgroup,cppStructure,cType,cCustomClass,cCustomAngleBrackets,cNumbers
+    syn match   cCustomBrack    "<\|>" contains=cCustomAngleBrackets
+    syn match   cCustomTemplateFunc "\w\+\s*<.*>(\@=" contains=cCustomBrack,cCustomAngleBrackets
     hi def link cCustomTemplateFunc  Function
 endif
+
+" Class and namespace scope
 if exists('g:cpp_class_scope_highlight') && g:cpp_class_scope_highlight
+    syn match    cCustomScope    "::"
+    syn match    cCustomClass    "\w\+\s*::" contains=cCustomScope
     hi def link cCustomClass Function  " disabled for now
 endif
 
