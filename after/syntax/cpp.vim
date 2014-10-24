@@ -1310,6 +1310,8 @@ if !exists("cpp_no_cpp11")
     syntax keyword cppSTLtype minutes
     syntax keyword cppSTLtype hours
 
+    "raw string literals
+    syntax region cppRawString matchgroup=cppRawDelimiter start=@\%(u8\|[uLU]\)\=R"\z([[:alnum:]_{}[\]#<>%:;.?*\+\-/\^&|~!=,"']\{,16}\)(@ end=/)\z1"/ contains=@Spell
 endif " C++11
 
 if !exists("cpp_no_cpp14")
@@ -1354,5 +1356,7 @@ if version >= 508 || !exists("did_cpp_syntax_inits")
   HiLink cppSTLenum         Typedef
   HiLink cppSTLios          Function
   HiLink cppSTLcast         Statement " be consistent with official syntax
+  HiLink cppRawString       String 
+  HiLink cppRawDelimiter    Delimiter
   delcommand HiLink
 endif
