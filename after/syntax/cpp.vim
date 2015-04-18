@@ -465,7 +465,7 @@ syntax keyword cppSTLfunction tanh
 syntax keyword cppSTLfunction tellg
 syntax keyword cppSTLfunction tellp
 "syntax keyword cppSTLfunction test
-syntax keyword cppSTLfunction time
+"syntax keyword cppSTLfunction time
 syntax keyword cppSTLfunction tmpfile
 syntax keyword cppSTLfunction tmpnam
 syntax keyword cppSTLfunction tolower
