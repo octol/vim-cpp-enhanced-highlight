@@ -134,6 +134,7 @@ syntax keyword cppSTLfunctional binary_negate
 syntax keyword cppSTLfunctional bit_and
 syntax keyword cppSTLfunctional bit_not
 syntax keyword cppSTLfunctional bit_or
+syntax keyword cppSTLfunctional bit_xor
 syntax keyword cppSTLfunctional divides
 syntax keyword cppSTLfunctional equal_to
 syntax keyword cppSTLfunctional greater
