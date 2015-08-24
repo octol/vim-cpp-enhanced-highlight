@@ -51,7 +51,7 @@ git submodule add https://github.com/octol/vim-cpp-enhanced-highlight.git bundle
 If you don't have either Vundle or Pathogen installed, copy the cpp.vim file
 (optionally also c.vim) to .vim/after/syntax.
 ```sh
-git clone https://github.com/octol/vim-cpp-enhanced-highlight.git /tmp
+git clone https://github.com/octol/vim-cpp-enhanced-highlight.git /tmp/vim-cpp-enhanced-highlight
 mkdir -p ~/.vim/after/syntax/
 mv /tmp/vim-cpp-enhanced-highlight/after/syntax/cpp.vim ~/.vim/after/syntax/cpp.vim
 rm -rf /tmp/vim-cpp-enhanced-highlight
