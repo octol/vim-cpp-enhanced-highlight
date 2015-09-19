@@ -30,18 +30,16 @@ Installation instructions
 Follow one of the sets of directions below and reload vim afterwards.
 
 #### Vundle
-If you have [vundle](https://github.com/gmarik/Vundle.vim) installed, 
-add 
+Instal using [vundle](https://github.com/gmarik/Vundle.vim) by adding
 ```vim
 Plugin 'octol/vim-cpp-enhanced-highlight'
 ```
-to .vimrc and run `:PluginInstall` from vim.
+to .vimrc and run `:PluginInstall`.
 
 
 #### Git submodule + Pathogen
 If you have [pathogen](https://github.com/tpope/vim-pathogen) installed,
-and you prefer to use git submodules, the following bash commands will help
-you do so.
+and you prefer to use git submodules, run
 ```sh
 cd ~/.vim
 git submodule add https://github.com/octol/vim-cpp-enhanced-highlight.git bundle/syntax/
@@ -55,6 +53,15 @@ git clone https://github.com/octol/vim-cpp-enhanced-highlight.git /tmp/vim-cpp-e
 mkdir -p ~/.vim/after/syntax/
 mv /tmp/vim-cpp-enhanced-highlight/after/syntax/cpp.vim ~/.vim/after/syntax/cpp.vim
 rm -rf /tmp/vim-cpp-enhanced-highlight
+```
+
+Issues
+------
+
+Vim tend to a have issues with flagging braces as errors, see for example
+https://github.com/vim-jp/vim-cpp/issues/16. A workaround is to set
+```vim
+let c_no_curly_error=1
 ```
 
 Background information
