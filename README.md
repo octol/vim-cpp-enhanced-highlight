@@ -13,7 +13,7 @@ Development is done at: http://github.com/octol/vim-cpp-enhanced-highlight
 Optional features
 -----------------
 
-Highlighting of class scope if disabled by default. To enable set
+Highlighting of class scope is disabled by default. To enable set
 ```vim
 let g:cpp_class_scope_highlight = 1
 ```
