@@ -39,9 +39,19 @@ A<T>::b getThing<T>(Fred<T> f);
 A<T>::b getThing<T<t>>(Fred<T> f);
 A<T>::b getThing<T<t>::List>(Fred<T> f);
 
+template <class T,
+         class B>
+class BaseCalss:
+    public AClass<T>
+{
+}
+
 for( int i=0; i<12; i++ )
 {
 }
+
+abbcaa
+abbc
 
 //Template function:
 //\(\(::\)\@<=\w\+\s*<.\{-}>\|\( \)\@<=\w\+\s*<[^:]\{-}>\)(\@=/g
