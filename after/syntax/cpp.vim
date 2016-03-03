@@ -53,7 +53,7 @@ if exists('g:cpp_experimental_template_highlight') && g:cpp_experimental_templat
     syn match   cCustomTemplateClass    "\w\{-1,}\s\{-}<[^:]\{-}>\(::\)\@=\(\w*(\)\@!" contains=cCustomScope,cCustomAngleBrackets
     hi def link cCustomTemplateClass  cCustomClass
 
-    syn match   cCustomTemplateFunc "\(\(::\)\@<=\w\+\s*<.\{-}>\|\( \)\@<=\w\+\s*<[^:]\{-}>\)(\@=" contains=cCustomBrack 
+    syn match   cCustomTemplateFunc "\(\(::\)\@2<=\w\+\s*<.\{-}>\|\( \)\@1<=\w\+\s*<[^:]\{-}>\)(\@=" contains=cCustomBrack 
     hi def link cCustomTemplateFunc  cCustomFunc
 endif
 
