@@ -47,8 +47,7 @@ endif
 " Template functions
 if exists('g:cpp_experimental_template_highlight') && g:cpp_experimental_template_highlight
     " syn region  cCustomAngleBrackets matchgroup=AngleBracketContents start="\v%(<operator\_s*)@<!%(%(\_i|template\_s*)@<=\<[<=]@!|\<@<!\<[[:space:]<=]@!)" end='>' contains=@cppSTLgroup,cppStructure,cType,cCustomClass,cCustomAngleBrackets,cNumbers
-    syn match  cCustomAngleBrackets "\%(<operator\_s*\)\@<!\%(\%(\_i\|template\_s*\)\@<=<[<=]@!\|<\@<!<[<=]\@!\)\_[^;()]\{-}>" contains=@cppSTLgroup,cppStructure,cType,cCustomClass,cCustomAngleBrackets,cNumbers
-    " syn match   AngleBracketContents "<\([^;()]|$\)*>"
+    syn match  cCustomAngleBrackets "\%(<operator\_s*\)\@1<!\%(\%(\_i\|template\_s*\)\@1<=<[<=]@!\|<\@1<!<[<=]\@!\)\_[^;()]\{-}>" contains=@cppSTLgroup,cppStructure,cType,cCustomClass,cCustomAngleBrackets,cNumbers
     syn match   cCustomBrack    "<\|>" contains=cCustomAngleBrackets
 
     syn match   cCustomTemplateClass    "\w\{-1,}\s\{-}<[^:]\{-}>\(::\)\@=\(\w*(\)\@!" contains=cCustomScope,cCustomAngleBrackets

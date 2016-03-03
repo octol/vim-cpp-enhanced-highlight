@@ -50,11 +50,17 @@ for( int i=0; i<12; i++ )
 {
 }
 
+bool operator<( int a , int b);
+bool operator<=( int a , int b);
+
 abbcaa
 abbc
 
+//Angle brackets
+//\%(<operator\_s*\)\@1<!\%(\%(\_i\|template\_s*\)\@1<=<[<=]@!\|<\@1<!<[<=]\@!\)\_[^;()]\{-}>
+
 //Template function:
-//\(\(::\)\@<=\w\+\s*<.\{-}>\|\( \)\@<=\w\+\s*<[^:]\{-}>\)(\@=/g
+//\(\(::\)\@2<=\w\+\s*<.\{-}>\|\( \)\@1<=\w\+\s*<[^:]\{-}>\)(\@=/g
 
 //Template class:
 //\w\{-1,}\s\{-}<[^:]\{-}>\(::\)\@=\(\w*(\)\@!/g
