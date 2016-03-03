@@ -51,6 +51,30 @@ AClass<T>::b getThing<T<t>>(Fred<T> f);
 AClass<T>::b getThing<T<t>::List>(Fred<T> f);
 AClass<T>::b getThing<T<B<T>::List>::List>(Fred<T> f);
 
+getThing<T>(Fred f);
+getThing<T>(Fred<T> f);
+getThing<T>(Fred<T>::List f);
+
+AClass<T>(Fred f);
+AClass<T>(Fred<T> f);
+AClass<T>(Fred<T>::List f);
+
+AClass::AClass::getThing(Fred<T> f);
+AClass::badClass::getThing(Fred<T> f);
+badClass::badClass::getThing(Fred<T> f);
+
+AClass::AClass::getThing<T<B<T>::List>::List>(Fred<T> f);
+AClass::badClass::getThing<T<B<T>::List>::List>(Fred<T> f);
+badClass::badClass::getThing<T<B<T>::List>::List>(Fred<T> f);
+
+AClass::AClass<T>::getThing<T<B<T>::List>::List>(Fred<T> f);
+AClass::badClass<T>::getThing<T<B<T>::List>::List>(Fred<T> f);
+badClass::badClass<T>::getThing<T<B<T>::List>::List>(Fred<T> f);
+
+AClass<T>::AClass<T>::getThing<T<B<T>::List>::List>(Fred<T> f);
+AClass<T>::badClass<T>::getThing<T<B<T>::List>::List>(Fred<T> f);
+badClass<T>::badClass<T>::getThing<T<B<T>::List>::List>(Fred<T> f);
+
 template <class T,
          class B>
 class BaseCalss:
@@ -64,14 +88,19 @@ class BaseCalss:
 {
 }
 
-
 for( int i=0; i<12; i++ )
 {
 }
 
+template<T>
+bool operator<double><( int a , int b)
+{
+    return b > a;
+}
+
 bool operator<( int a , int b)
 {
-    return a < b;
+    return b > a;
 }
 bool operator<=( int a , int b);
 

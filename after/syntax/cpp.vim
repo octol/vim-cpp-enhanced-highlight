@@ -34,37 +34,56 @@
 
 " Functions
 syn match   cCustomParen    "(" contains=cParen contains=cCppParen
-syn match   cCustomFunc     "\w\+\s*(\@=" contains=cCustomParen
+syn match   cCustomFunc     "\w\+\s*(\@="
 hi def link cCustomFunc  Function
 
 " Class and namespace scope
 if exists('g:cpp_class_scope_highlight') && g:cpp_class_scope_highlight
     syn match    cCustomScope    "::"
-    syn match    cCustomClass    "\w\+\s*::" contains=cCustomScope
-    hi def link cCustomClass Function  " disabled for now
+    syn match    cCustomClass    "\w\+\s*::" 
+                \contains=cCustomScope 
+    " hi def link cCustomClass Function  " disabled for now
+    syn match   cCustomClass    "\<\u\w*\s*\>" 
 endif
 
 " Template functions
 if exists('g:cpp_experimental_template_highlight') && g:cpp_experimental_template_highlight
 
-    syn match   cCustomAngleBracketStart "<\_[^;()]\{-}>" 
+    syn match   cCustomAngleBracketStart "<\_[^;()]\{-}>" contained 
                 \contains=cCustomAngleBracketStart, cCustomAngleBracketEnd
+    hi def link cCustomAngleBracketStart  cCustomAngleBracketContent
+
     syn match   cCustomAngleBracketEnd ">\_[^<>;()]\{-}>" contained 
                 \contains=cCustomAngleBracketEnd
-    hi def link cCustomAngleBracketStart  cCustomClass
-    hi def link cCustomAngleBracketEnd  cCustomClass
+    hi def link cCustomAngleBracketEnd  cCustomAngleBracketContent
 
-    syn match cCustomTemplateFuncS "::\w\+\s*<.\{-}>("hs=s+2,he=e-1 
-                \contains=cCustomAngleBracketStart,cCustomParen 
-                \containedin=cCustomScope
-    hi def link cCustomTemplateFuncS  cCustomFunc
+    syn match cCustomTemplateFunc "\<\l\w*\s*<\_[^;()]\{-}>(\@="hs=s,he=e-1 
+                \contains=cCustomAngleBracketStart
+    hi def link cCustomTemplateFunc  cCustomFunc
 
-    syn match cCustomTemplateFuncSB "\w\+\s*<[^>]\{-}>("hs=s,he=e-1 
-                \contains=cCustomAngleBracketStart,cCustomParen
-    hi def link cCustomTemplateFuncSB  cCustomFunc
-    syn match cCustomTemplateFuncSS "\w\+\s*<[^:]\{-}>("hs=s,he=e-1 
-                \contains=cCustomAngleBracketStart,cCustomParen
-    hi def link cCustomTemplateFuncSS  cCustomFunc
+    syn match    cCustomTemplateClass    "\<\w\+\s*<\_[^;()]\{-}>" 
+                \contains=cCustomAngleBracketStart,cCustomTemplateFunc 
+    hi def link cCustomTemplateClass cCustomClass
+
+
+    " Remove 'template' from cppStructure and use a custom match
+    syn clear cppStructure 
+    syn keyword cppStructure class typename namespace
+
+    syn match   cCustomTemplate "\<template\>" 
+    hi def link cCustomTemplate  cppStructure
+    syn match   cTemplateDeclare "\<template\_s*<\_[^;()]\{-}>" 
+                \contains=cppStructure,cCustomTemplate,cCustomAngleBracketStart 
+
+    " Remove 'operator' from cppStructure and use a custom match
+    syn clear cppOperator 
+    syn keyword cppOperator typeid
+    syn keyword cppOperator and bitor or xor compl bitand and_eq or_eq xor_eq not not_eq
+
+    syn match   cCustomOperator "\<operator\>" 
+    hi def link cCustomOperator  cppStructure
+    syn match   cTemplateOperatorDeclare "\<operator\_s*<\_[^;()]\{-}>[<>]=\?" 
+                \contains=cppOperator,cCustomOperator,cCustomAngleBracketStart 
 endif
 
 " Alternative syntax that is used in:
