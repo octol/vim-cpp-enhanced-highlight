@@ -46,15 +46,25 @@ endif
 
 " Template functions
 if exists('g:cpp_experimental_template_highlight') && g:cpp_experimental_template_highlight
-    " syn region  cCustomAngleBrackets matchgroup=AngleBracketContents start="\v%(<operator\_s*)@<!%(%(\_i|template\_s*)@<=\<[<=]@!|\<@<!\<[[:space:]<=]@!)" end='>' contains=@cppSTLgroup,cppStructure,cType,cCustomClass,cCustomAngleBrackets,cNumbers
-    syn match  cCustomAngleBrackets "\%(<operator\_s*\)\@1<!\%(\%(\_i\|template\_s*\)\@1<=<[<=]@!\|<\@1<!<[<=]\@!\)\_[^;()]\{-}>" contains=@cppSTLgroup,cppStructure,cType,cCustomClass,cCustomAngleBrackets,cNumbers
-    syn match   cCustomBrack    "<\|>" contains=cCustomAngleBrackets
 
-    syn match   cCustomTemplateClass    "\w\{-1,}\s\{-}<[^:]\{-}>\(::\)\@=\(\w*(\)\@!" contains=cCustomScope,cCustomAngleBrackets
-    hi def link cCustomTemplateClass  cCustomClass
+    syn match   cCustomAngleBracketStart "<\_[^;()]\{-}>" 
+                \contains=cCustomAngleBracketStart, cCustomAngleBracketEnd
+    syn match   cCustomAngleBracketEnd ">\_[^<>;()]\{-}>" contained 
+                \contains=cCustomAngleBracketEnd
+    hi def link cCustomAngleBracketStart  cCustomClass
+    hi def link cCustomAngleBracketEnd  cCustomClass
 
-    syn match   cCustomTemplateFunc "\(\(::\)\@2<=\w\+\s*<.\{-}>\|\( \)\@1<=\w\+\s*<[^:]\{-}>\)(\@=" contains=cCustomBrack 
-    hi def link cCustomTemplateFunc  cCustomFunc
+    syn match cCustomTemplateFuncS "::\w\+\s*<.\{-}>("hs=s+2,he=e-1 
+                \contains=cCustomAngleBracketStart,cCustomParen 
+                \containedin=cCustomScope
+    hi def link cCustomTemplateFuncS  cCustomFunc
+
+    syn match cCustomTemplateFuncSB "\w\+\s*<[^>]\{-}>("hs=s,he=e-1 
+                \contains=cCustomAngleBracketStart,cCustomParen
+    hi def link cCustomTemplateFuncSB  cCustomFunc
+    syn match cCustomTemplateFuncSS "\w\+\s*<[^:]\{-}>("hs=s,he=e-1 
+                \contains=cCustomAngleBracketStart,cCustomParen
+    hi def link cCustomTemplateFuncSS  cCustomFunc
 endif
 
 " Alternative syntax that is used in:
