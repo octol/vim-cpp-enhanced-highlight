@@ -88,6 +88,8 @@ class BaseCalss:
 {
 }
 
+Aclass<T> aClass = bClass->getThing();
+
 for( int i=0; i<12; i++ )
 {
 }
