@@ -106,3 +106,11 @@ bool operator<( int a , int b)
 }
 bool operator<=( int a , int b);
 
+bool tmp = a < b && b > c;
+if ( tmp )
+{
+    std::cout<<a<<"<"<<b<<"&&"<b<<">"<<c;
+}
+
+
+
