@@ -88,6 +88,8 @@ class BaseCalss:
 {
 }
 
+Aclass<T> aClass = bClass->getThing();
+
 for( int i=0; i<12; i++ )
 {
 }
@@ -103,4 +105,12 @@ bool operator<( int a , int b)
     return b > a;
 }
 bool operator<=( int a , int b);
+
+bool tmp = a < b && b > c;
+if ( tmp )
+{
+    std::cout<<a<<"<"<<b<<"&&"<b<<">"<<c;
+}
+
+
 
