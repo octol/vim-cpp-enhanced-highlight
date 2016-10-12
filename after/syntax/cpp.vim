@@ -40,9 +40,9 @@ hi def link cCustomFunc  Function
 
 " Class and namespace scope
 if exists('g:cpp_class_scope_highlight') && g:cpp_class_scope_highlight
-    syn match    cCustomScope    "::"
-    syn match    cCustomClass    "\w\+\s*::"
-                \contains=cCustomScope
+    syn match   cCustomScope    "::"
+    syn match   cCustomClass    "\w\+\s*::"
+                \ contains=cCustomScope
     " hi def link cCustomClass Function  " disabled for now
     syn match   cCustomClass    "\<\u\w*\s*\>"
 endif
@@ -51,19 +51,19 @@ endif
 if exists('g:cpp_experimental_template_highlight') && g:cpp_experimental_template_highlight
 
     syn match   cCustomAngleBracketStart "<\_[^;()]\{-}>" contained
-                \contains=cCustomAngleBracketStart, cCustomAngleBracketEnd
+                \ contains=cCustomAngleBracketStart,cCustomAngleBracketEnd
     hi def link cCustomAngleBracketStart  cCustomAngleBracketContent
 
     syn match   cCustomAngleBracketEnd ">\_[^<>;()]\{-}>" contained
-                \contains=cCustomAngleBracketEnd
+                \ contains=cCustomAngleBracketEnd
     hi def link cCustomAngleBracketEnd  cCustomAngleBracketContent
 
     syn match cCustomTemplateFunc "\<\l\w*\s*<\_[^;()]\{-}>(\@="hs=s,he=e-1
-                \contains=cCustomAngleBracketStart
+                \ contains=cCustomAngleBracketStart
     hi def link cCustomTemplateFunc  cCustomFunc
 
     syn match    cCustomTemplateClass    "\<\w\+\s*<\_[^;()]\{-}>"
-                \contains=cCustomAngleBracketStart,cCustomTemplateFunc
+                \ contains=cCustomAngleBracketStart,cCustomTemplateFunc
     hi def link cCustomTemplateClass cCustomClass
 
 
@@ -74,7 +74,7 @@ if exists('g:cpp_experimental_template_highlight') && g:cpp_experimental_templat
     syn match   cCustomTemplate "\<template\>"
     hi def link cCustomTemplate  cppStructure
     syn match   cTemplateDeclare "\<template\_s*<\_[^;()]\{-}>"
-                \contains=cppStructure,cCustomTemplate,cCustomAngleBracketStart
+                \ contains=cppStructure,cCustomTemplate,cCustomAngleBracketStart
 
     " Remove 'operator' from cppStructure and use a custom match
     syn clear cppOperator
@@ -84,7 +84,7 @@ if exists('g:cpp_experimental_template_highlight') && g:cpp_experimental_templat
     syn match   cCustomOperator "\<operator\>"
     hi def link cCustomOperator  cppStructure
     syn match   cTemplateOperatorDeclare "\<operator\_s*<\_[^;()]\{-}>[<>]=\?"
-                \contains=cppOperator,cCustomOperator,cCustomAngleBracketStart
+                \ contains=cppOperator,cCustomOperator,cCustomAngleBracketStart
 endif
 
 " Alternative syntax that is used in:
