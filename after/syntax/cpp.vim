@@ -43,8 +43,7 @@ if exists('g:cpp_class_scope_highlight') && g:cpp_class_scope_highlight
     syn match   cCustomScope    "::"
     syn match   cCustomClass    "\w\+\s*::"
                 \ contains=cCustomScope
-    " hi def link cCustomClass Function  " disabled for now
-    syn match   cCustomClass    "\<\u\w*\s*\>"
+    hi def link cCustomClass Function
 endif
 
 " Template functions
