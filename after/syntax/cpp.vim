@@ -886,6 +886,30 @@ if !exists("cpp_no_cpp11")
     syntax keyword cppSTLtype true_type
     syntax keyword cppSTLtype false_type
     syntax keyword cppSTLfunction declval
+    " C++14 helper aliases for type traits.
+    syntax keyword cppSTLtype remove_cv_t
+    syntax keyword cppSTLtype remove_const_t
+    syntax keyword cppSTLtype remove_volatile_t
+    syntax keyword cppSTLtype add_cv_t
+    syntax keyword cppSTLtype add_const_t
+    syntax keyword cppSTLtype add_volatile_t
+    syntax keyword cppSTLtype remove_reference_t
+    syntax keyword cppSTLtype add_lvalue_reference_t
+    syntax keyword cppSTLtype add_rvalue_reference_t
+    syntax keyword cppSTLtype remove_pointer_t
+    syntax keyword cppSTLtype add_pointer_t
+    syntax keyword cppSTLtype make_signed_t
+    syntax keyword cppSTLtype make_unsigned_t
+    syntax keyword cppSTLtype remove_extent_t
+    syntax keyword cppSTLtype remove_all_extents_t
+    syntax keyword cppSTLtype aligned_storage_t
+    syntax keyword cppSTLtype aligned_union_t
+    syntax keyword cppSTLtype decay_t
+    syntax keyword cppSTLtype enable_if_t
+    syntax keyword cppSTLtype conditional_t
+    syntax keyword cppSTLtype common_type_t
+    syntax keyword cppSTLtype underlying_type_t
+    syntax keyword cppSTLtype result_of_t
 
     syntax keyword cppSTLconstant piecewise_construct
     syntax keyword cppSTLtype piecewise_construct_t
