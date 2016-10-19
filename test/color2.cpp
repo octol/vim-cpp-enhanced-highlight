@@ -1,3 +1,9 @@
+// Set of tests. Should all be correctly highlighted with
+// let g:cpp_experimental_simple_template_highlight = 1
+//
+// Note: the template functions break with
+// let g:cpp_experimental_template_highlight = 1
+
 class Class {
     Class(int val): value(val) {
     };
@@ -24,3 +30,6 @@ void Class::Function(double variable) {
 void func<std::map<std::string, std::string<double>>>() {
     std::cout << "output" << std::endl;
 }
+
+uint32_t b = static_cast<uint8_t>(a);
+char j = reinterpret_cast<char>(k);

@@ -1,3 +1,5 @@
+// Set of tests. Should all be correctly highlighted with
+// let g:cpp_experimental_template_highlight = 1
 
 AClass::b AClass::getThing(Fred f);
 AClass::b AClass::getThing(Fred<T> f);
