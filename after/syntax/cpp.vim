@@ -46,8 +46,20 @@ if exists('g:cpp_class_scope_highlight') && g:cpp_class_scope_highlight
     hi def link cCustomClass Function
 endif
 
-" Template functions
-if exists('g:cpp_experimental_template_highlight') && g:cpp_experimental_template_highlight
+" Template functions.
+" Naive implementation that sorta works in most cases. Should correctly
+" highlight everything in test/color2.cpp
+if exists('g:cpp_experimental_simple_template_highlight') && g:cpp_experimental_simple_template_highlight
+    syn region  cCustomAngleBrackets matchgroup=AngleBracketContents start="\v%(<operator\_s*)@<!%(%(\_i|template\_s*)@<=\<[<=]@!|\<@<!\<[[:space:]<=]@!)" end='>' contains=@cppSTLgroup,cppStructure,cType,cCustomClass,cCustomAngleBrackets,cNumbers
+    syn match   cCustomBrack    "<\|>" contains=cCustomAngleBrackets
+    syn match   cCustomTemplateFunc "\w\+\s*<.*>(\@=" contains=cCustomBrack,cCustomAngleBrackets
+    hi def link cCustomTemplateFunc  Function
+
+" Template functions (alternative faster parsing).
+" More sophisticated implementation that should be faster but doesn't always
+" correctly highlight inside template arguments. Should correctly
+" highlight everything in test/color.cpp
+elseif exists('g:cpp_experimental_template_highlight') && g:cpp_experimental_template_highlight
 
     syn match   cCustomAngleBracketStart "<\_[^;()]\{-}>" contained
                 \ contains=cCustomAngleBracketStart,cCustomAngleBracketEnd
