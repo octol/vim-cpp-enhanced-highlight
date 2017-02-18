@@ -10,7 +10,7 @@ class Class {
 };
 
 bool operator<(const ConnectionString& other) const {
-    return _string < other._string;
+    return this->_string < other._string;
 }
 
 class Class {
