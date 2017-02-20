@@ -10,6 +10,8 @@ Development is done at: http://github.com/octol/vim-cpp-enhanced-highlight
 
 ![Screenshot](http://www.haeggblad.com/vim/screenshot.png)
 
+This plugin contributes to [vim-polyglot](https://github.com/sheerun/vim-polyglot) language pack.
+
 Optional features
 -----------------
 
