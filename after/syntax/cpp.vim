@@ -126,8 +126,7 @@ elseif exists('g:cpp_experimental_template_highlight') && g:cpp_experimental_tem
     syn match   cCustomTemplate "\<template\>"
     hi def link cCustomTemplate  cppStructure
     syn match   cTemplateDeclare "\<template\_s*<\_[^;()]\{-}>"
-                \ contains=cppStructure,cCustomTemplate,
-                \ cCustomClassKey,cCustomAngleBracketStart
+                \ contains=cppStructure,cCustomTemplate,cCustomClassKey,cCustomAngleBracketStart
 
     " Remove 'operator' from cppOperator and use a custom match
     syn clear cppOperator
