@@ -145,7 +145,7 @@ endif
 "hi def link cCustomFunc  Function
 
 " Cluster for all the stdlib functions defined below
-syn cluster cppSTLgroup     contains=cppSTLfunction,cppSTLfunctional,cppSTLconstant,cppSTLnamespace,cppSTLtype,cppSTLexception,cppSTLiterator,cppSTLiterator_tagcppSTLenumcppSTLioscppSTLcast
+syn cluster cppSTLgroup     contains=cppSTLfunction,cppSTLfunctional,cppSTLconstant,cppSTLnamespace,cppSTLtype,cppSTLexception,cppSTLiterator,cppSTLiterator_tag,cppSTLenum,cppSTLios,cppSTLcast
 
 
 " -----------------------------------------------------------------------------
