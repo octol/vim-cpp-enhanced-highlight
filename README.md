@@ -50,6 +50,11 @@ let g:cpp_concepts_highlight = 1
 This will highlight the keywords `concept` and `requires` as well as all named
 requirements (like `DefaultConstructible`) in the standard library.
 
+Highlighting of user defined functions can be disabled by
+```vim
+let g:cpp_no_function_highlight = 1
+```
+
 Installation instructions
 -------------------------
 Follow one of the sets of directions below and reload vim afterwards.

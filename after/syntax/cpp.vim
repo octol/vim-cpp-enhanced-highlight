@@ -34,9 +34,11 @@
 " -----------------------------------------------------------------------------
 
 " Functions
-syn match   cCustomParen    "(" contains=cParen contains=cCppParen
-syn match   cCustomFunc     "\w\+\s*(\@="
-hi def link cCustomFunc  Function
+if !exists('g:cpp_no_function_highlight')
+    syn match   cCustomParen    "(" contains=cParen contains=cCppParen
+    syn match   cCustomFunc     "\w\+\s*(\@="
+    hi def link cCustomFunc  Function
+endif
 
 " Class and namespace scope
 if exists('g:cpp_class_scope_highlight') && g:cpp_class_scope_highlight
