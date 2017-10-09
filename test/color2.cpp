@@ -28,6 +28,7 @@ void Class::Function(double variable) {
 }
 
 void func<std::map<std::string, std::string<double>>>() {
+    int a = .4;
     std::cout << "output" << std::endl;
 }
 
