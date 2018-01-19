@@ -853,6 +853,37 @@ syntax keyword cppSTLconstant WEOF
 syntax keyword cppSTLconstant WCHAR_MIN
 syntax keyword cppSTLconstant WCHAR_MAX
 
+" locale
+syntax keyword cppSTLtype locale
+syntax keyword cppSTLtype ctype_base
+syntax keyword cppSTLtype codecvt_base
+syntax keyword cppSTLtype messages_base
+syntax keyword cppSTLtype time_base
+syntax keyword cppSTLtype money_base
+syntax keyword cppSTLtype ctype
+syntax keyword cppSTLtype codecvt
+syntax keyword cppSTLtype collate
+syntax keyword cppSTLtype messages
+syntax keyword cppSTLtype time_get
+syntax keyword cppSTLtype time_put
+syntax keyword cppSTLtype num_get
+syntax keyword cppSTLtype num_put
+syntax keyword cppSTLtype numpunct
+syntax keyword cppSTLtype money_get
+syntax keyword cppSTLtype money_put
+syntax keyword cppSTLtype moneypunct
+syntax keyword cppSTLtype ctype_byname
+syntax keyword cppSTLtype codecvt_byname
+syntax keyword cppSTLtype messages_byname
+syntax keyword cppSTLtype collate_byname
+syntax keyword cppSTLtype time_get_byname
+syntax keyword cppSTLtype time_put_byname
+syntax keyword cppSTLtype numpunct_byname
+syntax keyword cppSTLtype moneypunct_byname
+syntax keyword cppSTLfunction use_facet
+syntax keyword cppSTLfunction has_facet
+syntax keyword cppSTLfunction isspace isblank iscntrl isupper islower isalpha
+syntax keyword cppSTLfunction isdigit ispunct isxdigit isalnum isprint isgraph
 
 if !exists("cpp_no_cpp11")
     syntax keyword cppSTLconstant nullptr
@@ -1764,6 +1795,9 @@ if !exists("cpp_no_cpp17")
     syntax keyword cppSTLfunction do_deallocate
     syntax keyword cppSTLfunction do_is_equal
 
+    " mutex
+    syntax keyword cppSTLtype scoped_lock
+
     " new
     syntax keyword cppSTLconstant hardware_destructive_interference_size
     syntax keyword cppSTLconstant hardware_constructive_interference_size
@@ -1802,7 +1836,7 @@ if !exists("cpp_no_cpp17")
     syntax keyword cppSTLbool is_error_code_enum_v
     syntax keyword cppSTLbool is_error_condition_enum_v
 
-    " thread
+    " shared_mutex
     syntax keyword cppSTLtype shared_mutex
 
     " tuple
