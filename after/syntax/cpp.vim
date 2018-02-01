@@ -2,7 +2,7 @@
 " Language: C++ Additions
 " Maintainer: Jon Haggblad <jon@haeggblad.com>
 " URL: http://www.haeggblad.com
-" Last Change: 12 Oct 2016
+" Last Change: 1 Feb 2018
 " Version: 0.6
 " Changelog:
 "   0.1 - initial version.
@@ -1911,6 +1911,16 @@ if !exists("cpp_no_cpp17")
     syntax keyword cppSTLbool conjunction_v
     syntax keyword cppSTLbool disjunction_v
     syntax keyword cppSTLbool negation_v
+    syntax keyword cppSTLbool has_unique_object_representations_v
+    syntax keyword cppSTLbool is_swappable_v
+    syntax keyword cppSTLbool is_swappable_with_v
+    syntax keyword cppSTLbool is_nothrow_swappable_v
+    syntax keyword cppSTLbool is_nothrow_swappable_with_v
+    syntax keyword cppSTLbool is_invocable_v
+    syntax keyword cppSTLbool is_invocable_r_v
+    syntax keyword cppSTLbool is_nothrow_invocable_v
+    syntax keyword cppSTLbool is_nothrow_invocable_r_v
+    syntax keyword cppSTLbool is_aggregate_v
     syntax keyword cppSTLconstant alignment_of_v
     syntax keyword cppSTLconstant rank_v
     syntax keyword cppSTLconstant extent_v
@@ -1920,6 +1930,19 @@ if !exists("cpp_no_cpp17")
     syntax keyword cppSTLtype conjunction
     syntax keyword cppSTLtype disjunction
     syntax keyword cppSTLtype negation
+    syntax keyword cppSTLtype void_t
+    syntax keyword cppSTLtype has_unique_object_representations
+    syntax keyword cppSTLtype is_swappable
+    syntax keyword cppSTLtype is_swappable_with
+    syntax keyword cppSTLtype is_nothrow_swappable
+    syntax keyword cppSTLtype is_nothrow_swappable_with
+    syntax keyword cppSTLtype is_invocable
+    syntax keyword cppSTLtype is_invocable_r
+    syntax keyword cppSTLtype is_nothrow_invocable
+    syntax keyword cppSTLtype is_nothrow_invocable_r
+    syntax keyword cppSTLtype invoke_result
+    syntax keyword cppSTLtype invoke_result_t
+    syntax keyword cppSTLtype is_aggregate
 
     " unordered_map, unordered_set, unordered_multimap, unordered_multiset
     syntax keyword cppSTLtype node_type
@@ -1951,6 +1974,12 @@ if !exists("cpp_no_cpp17")
     syntax keyword cppSTLfunction visit
     " syntax keyword cppSTLfunction index
 endif " C++17
+
+
+if !exists("cpp_no_cpp20")
+    " type_traits
+    syntax keyword cppSTLtype remove_cvref remove_cvref_t
+endif
 
 
 if exists('g:cpp_concepts_highlight') && g:cpp_concepts_highlight
