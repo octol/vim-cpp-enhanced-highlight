@@ -59,15 +59,14 @@ Installation instructions
 -------------------------
 Follow one of the sets of directions below and reload vim afterwards.
 
-#### Vundle
+### Vundle
 Install using [vundle](https://github.com/gmarik/Vundle.vim) by adding
 ```vim
 Plugin 'octol/vim-cpp-enhanced-highlight'
 ```
 to .vimrc and run `:PluginInstall`.
 
-
-#### Git submodule + Pathogen
+### Git submodule + Pathogen
 If you have [pathogen](https://github.com/tpope/vim-pathogen) installed,
 and you prefer to use git submodules, run
 ```sh
@@ -75,7 +74,10 @@ cd ~/.vim
 git submodule add https://github.com/octol/vim-cpp-enhanced-highlight.git bundle/syntax/
 ```
 
-#### Manual installation
+### As part of vim-polyglot
+To use this project as part of the larger [vim-polyglot project](https://github.com/sheerun/vim-polyglot#readme), just follow [its installation instructions](https://github.com/sheerun/vim-polyglot#installation).
+
+### Manual installation
 If you don't have either Vundle or Pathogen installed, copy the cpp.vim file
 (optionally also c.vim) to .vim/after/syntax.
 ```sh
