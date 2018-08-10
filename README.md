@@ -78,8 +78,8 @@ git submodule add https://github.com/octol/vim-cpp-enhanced-highlight.git bundle
 To use this project as part of the larger [vim-polyglot project](https://github.com/sheerun/vim-polyglot#readme), just follow [its installation instructions](https://github.com/sheerun/vim-polyglot#installation).
 
 ### Manual installation
-If you don't have either Vundle or Pathogen installed, copy the cpp.vim file
-(optionally also c.vim) to .vim/after/syntax.
+If you don't have either Vundle or Pathogen installed, and don't want to go the polyglot route,
+copy the cpp.vim file (optionally also c.vim) to `~/.vim/after/syntax`.
 ```sh
 git clone https://github.com/octol/vim-cpp-enhanced-highlight.git /tmp/vim-cpp-enhanced-highlight
 mkdir -p ~/.vim/after/syntax/
