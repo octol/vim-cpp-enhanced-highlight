@@ -960,6 +960,12 @@ if !exists("cpp_no_cpp11")
     syntax keyword cppSTLtype atomic_uintmax_t
     syntax keyword cppSTLconstant ATOMIC_FLAG_INIT
     syntax keyword cppSTLenum memory_order
+    syntax keyword cppSTLtype memory_order_relaxed
+    syntax keyword cppSTLtype memory_order_consume
+    syntax keyword cppSTLtype memory_order_acquire
+    syntax keyword cppSTLtype memory_order_release
+    syntax keyword cppSTLtype memory_order_acq_rel
+    syntax keyword cppSTLtype memory_order_seq_cst
     syntax keyword cppSTLfunction is_lock_free
     syntax keyword cppSTLfunction compare_exchange_weak
     syntax keyword cppSTLfunction compare_exchange_strong
