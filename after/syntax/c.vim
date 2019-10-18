@@ -35,6 +35,44 @@ if exists('g:cpp_member_variable_highlight') && g:cpp_member_variable_highlight
 endif
 
 " -----------------------------------------------------------------------------
+"  Highlight BSD extensions.
+" -----------------------------------------------------------------------------
+if exists('g:cpp_bsd_standard') && g:cpp_bsd_standard
+	syn keyword cBSDFunction	err errx warn warnx verr verrx vwarn vwarnx
+	syn keyword cBSDFunction	errc verrc warnc vwarnc
+	syn keyword cBSDFunction	strtonum strtoi strtou
+	syn keyword cBSDFunction	dehumanize_number expand_number
+	syn keyword cBSDFunction	strlcat strlcpy strnstr wcslcat wcslcpy
+	syn keyword cBSDFunction	vis nvis strvis stravis strnvis strvisx
+	syn keyword cBSDFunction	strnvisx strenvisx svis snvis strsvis
+	syn keyword cBSDFunction	strsnvis strsvisx strsnvisx strsenvisx
+	syn keyword cBSDFunction	unvis strunvis strnunvis strunvisx strnunvisx
+	syn keyword cBSDFunction	arc4random arc4random_buf arc4random_uniform
+	syn keyword cBSDFunction	arc4random_stir arc4random_addrrandom
+	syn keyword cBSDFunction	be16dec be32dec be64dec le16dec le32dec le64dec
+	syn keyword cBSDFunction	be16enc be32enc be64enc le16enc le32enc le64enc
+	syn keyword cBSDFunction	bit_alloc bit_decl bit_clear bit_ffc bit_ffs
+	syn keyword cBSDFunction	bit_nclear bit_nset bit_set bitstr_size
+	syn keyword cBSDFunction	bit_test
+	syn keyword cBSDFunction	sl_init sl_add sl_free sl_find sl_delete
+	syn keyword cBSDFunction	closefrom bzero explicit_bzero
+	syn keyword cBSDFunction	fgetln fgetwln flopen fmtcheck fparseln fpurge
+	syn keyword cBSDFunction	funopen strmode
+	syn keyword cBSDFunction	getbsize getmode setmode getpeereid
+	syn keyword cBSDFunction	pidfile_open pidfile_write pidfile_close
+	syn keyword cBSDFunction	pidfile_remove pidfile_fileno
+	syn keyword cBSDFunction	getprogname setprogname nlist
+	syn keyword cBSDFunction	setproctitle_init setproctitle
+	syn keyword cBSDFunction	heapsort mergesort radixsort sradixsort
+	syn keyword cBSDFunction	MD5Init MD5Update MD5Pad MD5Final MD5Transform
+	syn keyword cBSDFunction	MD5End MD5File MD5FileChunk MD5Data
+	syn keyword cBSDFunction	readpassphrase
+	syn keyword cBSDFunction	reallocarray reallocf
+	syn keyword cBSDFunction	timeradd timersub timerclear timerisset timercmp
+	syn keyword cBSDFunction	timespecadd timespecsub timespecclear
+	syn keyword cBSDFunction	timespecisset timespeccmp
+endif
+" -----------------------------------------------------------------------------
 "  Source: aftersyntaxc.vim
 " -----------------------------------------------------------------------------
 
@@ -208,40 +246,6 @@ syn keyword cAnsiFunction	UINTMAX_C INTMAX_C UINT64_C
 syn keyword cAnsiFunction	UINT32_C UINT16_C UINT8_C
 syn keyword cAnsiFunction	INT64_C INT32_C INT16_C INT8_C
 
-" Common BSD extensions
-syn keyword cBSDFunction	err errx warn warnx verr verrx vwarn vwarnx
-syn keyword cBSDFunction	errc verrc warnc vwarnc
-syn keyword cBSDFunction	strtonum strtoi strtou
-syn keyword cBSDFunction	dehumanize_number expand_number
-syn keyword cBSDFunction	strlcat strlcpy strnstr wcslcat wcslcpy
-syn keyword cBSDFunction	vis nvis strvis stravis strnvis strvisx
-syn keyword cBSDFunction	strnvisx strenvisx svis snvis strsvis
-syn keyword cBSDFunction	strsnvis strsvisx strsnvisx strsenvisx
-syn keyword cBSDFunction	unvis strunvis strnunvis strunvisx strnunvisx
-syn keyword cBSDFunction	arc4random arc4random_buf arc4random_uniform
-syn keyword cBSDFunction	arc4random_stir arc4random_addrrandom
-syn keyword cBSDFunction	be16dec be32dec be64dec le16dec le32dec le64dec
-syn keyword cBSDFunction	be16enc be32enc be64enc le16enc le32enc le64enc
-syn keyword cBSDFunction	bit_alloc bit_decl bit_clear bit_ffc bit_ffs
-syn keyword cBSDFunction	bit_nclear bit_nset bit_set bitstr_size
-syn keyword cBSDFunction	bit_test
-syn keyword cBSDFunction	sl_init sl_add sl_free sl_find sl_delete
-syn keyword cBSDFunction	closefrom bzero explicit_bzero
-syn keyword cBSDFunction	fgetln fgetwln flopen fmtcheck fparseln fpurge
-syn keyword cBSDFunction	funopen strmode
-syn keyword cBSDFunction	getbsize getmode setmode getpeereid
-syn keyword cBSDFunction	pidfile_open pidfile_write pidfile_close
-syn keyword cBSDFunction	pidfile_remove pidfile_fileno
-syn keyword cBSDFunction	getprogname setprogname nlist
-syn keyword cBSDFunction	setproctitle_init setproctitle
-syn keyword cBSDFunction	heapsort mergesort radixsort sradixsort
-syn keyword cBSDFunction	MD5Init MD5Update MD5Pad MD5Final MD5Transform
-syn keyword cBSDFunction	MD5End MD5File MD5FileChunk MD5Data
-syn keyword cBSDFunction	readpassphrase
-syn keyword cBSDFunction	reallocarray reallocf
-syn keyword cBSDFunction	timeradd timersub timerclear timerisset timercmp
-syn keyword cBSDFunction	timespecadd timespecsub timespecclear
-syn keyword cBSDFunction	timespecisset timespeccmp
 
 " Common ANSI-standard Names
 syn keyword	cAnsiName	PRId8 PRIi16 PRIo32 PRIu64
