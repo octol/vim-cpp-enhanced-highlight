@@ -35,6 +35,19 @@ if exists('g:cpp_member_variable_highlight') && g:cpp_member_variable_highlight
 endif
 
 " -----------------------------------------------------------------------------
+"  Highlight POSIX functions.
+" -----------------------------------------------------------------------------
+if exists('g:cpp_posix_standard') && g:cpp_posix_standard
+	syn keyword cPOSIXFunction 	socket accept bind connect getsockname
+	syn keyword cPOSIXFunction 	listen recv recvfrom recvmsg
+	syn keyword cPOSIXFunction 	send sendto sendmsg setsockopt socketpair
+	syn keyword cPOSIXFunction 	htonl htons ntohl ntohs
+	syn keyword cPOSIXFunction 	inet_ntop inet_pton getaddrinfo
+	syn keyword cPOSIXFunction 	poll select pselect
+	hi def link cPOSIXFunction Function
+endif
+
+" -----------------------------------------------------------------------------
 "  Source: aftersyntaxc.vim
 " -----------------------------------------------------------------------------
 
@@ -204,12 +217,6 @@ syn keyword cAnsiFunction	ccosf ccos catanl
 syn keyword cAnsiFunction	catanf catan casinl
 syn keyword cAnsiFunction	casinf casin cacosl
 syn keyword cAnsiFunction	cacosf cacos assert
-syn keyword cAnsiFunction 	socket accept bind connect getsockname
-syn keyword cAnsiFunction 	listen recv recvfrom recvmsg
-syn keyword cAnsiFunction 	send sendto sendmsg setsockopt socketpair
-syn keyword cAnsiFunction 	htonl htons ntohl ntohs
-syn keyword cAnsiFunction 	inet_ntop inet_pton getaddrinfo
-syn keyword cAnsiFunction 	poll select pselect
 syn keyword cAnsiFunction	UINTMAX_C INTMAX_C UINT64_C
 syn keyword cAnsiFunction	UINT32_C UINT16_C UINT8_C
 syn keyword cAnsiFunction	INT64_C INT32_C INT16_C INT8_C
