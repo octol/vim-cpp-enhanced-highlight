@@ -28,6 +28,11 @@ Highlighting of class names in declarations is disabled by default. To enable se
 let g:cpp_class_decl_highlight = 1
 ```
 
+Highlighting of POSIX functions is disabled by default. To enable set
+```vim
+let g:cpp_posix_standard = 1
+```
+
 There are two ways to highlight template functions. Either
 ```vim
 let g:cpp_experimental_simple_template_highlight = 1
