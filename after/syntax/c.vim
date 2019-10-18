@@ -204,6 +204,12 @@ syn keyword cAnsiFunction	ccosf ccos catanl
 syn keyword cAnsiFunction	catanf catan casinl
 syn keyword cAnsiFunction	casinf casin cacosl
 syn keyword cAnsiFunction	cacosf cacos assert
+syn keyword cAnsiFunction 	socket accept bind connect getsockname
+syn keyword cAnsiFunction 	listen recv recvfrom recvmsg
+syn keyword cAnsiFunction 	send sendmsg setsockopt socketpair
+syn keyword cAnsiFunction 	htonl htons ntohl ntohs
+syn keyword cAnsiFunction 	inet_ntop inet_pton getaddrinfo
+syn keyword cAnsiFunction 	poll select pselect
 syn keyword cAnsiFunction	UINTMAX_C INTMAX_C UINT64_C
 syn keyword cAnsiFunction	UINT32_C UINT16_C UINT8_C
 syn keyword cAnsiFunction	INT64_C INT32_C INT16_C INT8_C
