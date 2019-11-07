@@ -631,21 +631,19 @@ syntax keyword cppSTLios unitbuf
 syntax keyword cppSTLios uppercase
 "syntax keyword cppSTLios ws
 syntax keyword cppSTLiterator back_insert_iterator
-syntax keyword cppSTLiterator bidirectional_iterator
 syntax keyword cppSTLiterator const_iterator
 syntax keyword cppSTLiterator const_reverse_iterator
-syntax keyword cppSTLiterator forward_iterator
 syntax keyword cppSTLiterator front_insert_iterator
-syntax keyword cppSTLiterator input_iterator
 syntax keyword cppSTLiterator insert_iterator
 syntax keyword cppSTLiterator istreambuf_iterator
 syntax keyword cppSTLiterator istream_iterator
+syntax keyword cppSTLiterator ostreambuf_iterator
+syntax keyword cppSTLiterator ostream_iterator
 syntax keyword cppSTLiterator iterator
 syntax keyword cppSTLiterator ostream_iterator
 syntax keyword cppSTLiterator output_iterator
-syntax keyword cppSTLiterator random_access_iterator
 syntax keyword cppSTLiterator raw_storage_iterator
-syntax keyword cppSTLiterator reverse_bidirectional_iterator
+syntax keyword cppSTLiterator move_iterator
 syntax keyword cppSTLiterator reverse_iterator
 syntax keyword cppSTLiterator_tag bidirectional_iterator_tag
 syntax keyword cppSTLiterator_tag forward_iterator_tag
@@ -1591,6 +1589,8 @@ endif " C++14
 
 
 if !exists("cpp_no_cpp17")
+    syntax keyword cppSTLnamespace pmr
+
     " algorithm
     syntax keyword cppSTLfunction clamp
     syntax keyword cppSTLfunction for_each_n
@@ -1983,11 +1983,127 @@ endif " C++17
 
 
 if !exists("cpp_no_cpp20")
-    " type_traits
-    syntax keyword cppSTLtype remove_cvref remove_cvref_t
     syntax keyword cppType char8_t
     syntax keyword cppStatement co_yield co_return co_await
     syntax keyword cppStorageClass consteval
+    syntax keyword cppSTLnamespace ranges
+
+    " algorithm
+    syntax keyword cppSTLfunction shift_left
+    syntax keyword cppSTLfunction shift_right
+    syntax keyword cppSTLfunction lexicographical_compare_three_way
+
+    " bit
+    syntax keyword cppSTLcast bit_cast
+    syntax keyword cppSTLfunction ispow2
+    syntax keyword cppSTLfunction ceil2
+    syntax keyword cppSTLfunction floor2
+    syntax keyword cppSTLfunction log2p1
+    syntax keyword cppSTLfunction rotl
+    syntax keyword cppSTLfunction rotr
+    syntax keyword cppSTLfunction countl_zero
+    syntax keyword cppSTLfunction countl_one
+    syntax keyword cppSTLfunction countr_zero
+    syntax keyword cppSTLfunction countr_one
+    syntax keyword cppSTLfunction popcount
+    syntax keyword cppSTLtype endian
+
+    " compare
+    syntax keyword cppSTLtype weak_equality
+    syntax keyword cppSTLtype strong_equality
+    syntax keyword cppSTLtype partial_ordering
+    syntax keyword cppSTLtype weak_ordering
+    syntax keyword cppSTLtype strong_ordering
+    syntax keyword cppSTLtype common_comparison_category
+    syntax keyword cppSTLtype compare_three_way_result
+    syntax keyword cppSTLtype compare_three_way
+    syntax keyword cppSTLtype strong_order
+    syntax keyword cppSTLtype weak_order
+    syntax keyword cppSTLtype parital_order
+    syntax keyword cppSTLtype compare_strong_order_fallback
+    syntax keyword cppSTLtype compare_weak_order_fallback
+    syntax keyword cppSTLtype compare_parital_order_fallback
+    syntax keyword cppSTLfunction is_eq
+    syntax keyword cppSTLfunction is_neq
+    syntax keyword cppSTLfunction is_lt
+    syntax keyword cppSTLfunction is_lteq
+    syntax keyword cppSTLfunction is_gt
+    syntax keyword cppSTLfunction is_gteq
+
+    " format
+    syntax keyword cppSTLtype formatter
+    syntax keyword cppSTLtype basic_format_parse_context
+    syntax keyword cppSTLtype format_parse_context
+    syntax keyword cppSTLtype wformat_parse_context
+    syntax keyword cppSTLtype basic_format_context
+    syntax keyword cppSTLtype format_context
+    syntax keyword cppSTLtype wformat_context
+    syntax keyword cppSTLtype basic_format_arg
+    syntax keyword cppSTLtype basic_format_args
+    syntax keyword cppSTLtype format_args
+    syntax keyword cppSTLtype wformat_args
+    syntax keyword cppSTLtype format_args_t
+    syntax keyword cppSTLtype format_error
+    syntax keyword cppSTLfuntion format
+    syntax keyword cppSTLfuntion format_to
+    syntax keyword cppSTLfuntion format_to_n
+    syntax keyword cppSTLfuntion formatted_size
+    syntax keyword cppSTLfuntion vformat
+    syntax keyword cppSTLfuntion vformat_to
+    syntax keyword cppSTLfuntion visit_format_arg
+    syntax keyword cppSTLfuntion make_format_args
+    syntax keyword cppSTLfuntion make_wformat_args
+
+    " iterator
+    syntax keyword cppSTLtype default_sentinel_t unreachable_sentinel_t
+    syntax keyword cppSTLiterator common_iterator
+    syntax keyword cppSTLiterator counted_iterator
+    syntax keyword cppSTLiterator_tag contiguous_iterator_tag
+
+    " memory
+    syntax keyword cppSTLfunction to_address
+    syntax keyword cppSTLfunction assume_aligned
+    syntax keyword cppSTLfunction make_unique_default_init
+    syntax keyword cppSTLfunction allocate_shared_default_init
+
+    " source_location
+    syntax keyword cppSTLtype source_location
+
+    " span
+    syntax keyword cppSTLtype span
+    syntax keyword cppSTLfunction as_bytes
+    syntax keyword cppSTLfunction as_writable_bytes
+    syntax keyword cppSTLconstant dynamic_extent
+
+    " syncstream
+    syntax keyword cppSTLtype basic_syncbuf
+    syntax keyword cppSTLtype basic_osyncstream
+    syntax keyword cppSTLtype syncbuf
+    syntax keyword cppSTLtype wsyncbuf
+    syntax keyword cppSTLtype osyncstream
+    syntax keyword cppSTLtype wosyncstream
+
+    " type_traits
+    syntax keyword cppSTLtype remove_cvref remove_cvref_t
+    syntax keyword cppSTLtype common_reference common_reference_t
+    syntax keyword cppSTLfunction is_constant_evaluated
+    syntax keyword cppSTLfunction is_pointer_interconvertible
+    syntax keyword cppSTLfunction is_corresponding_member
+    syntax keyword cppSTLtype is_nothrow_convertible
+    syntax keyword cppSTLbool is_nothrow_convertible_v
+    syntax keyword cppSTLtype is_layout_compatible
+    syntax keyword cppSTLbool is_layout_compatible_v
+    syntax keyword cppSTLtype is_bounded_array
+    syntax keyword cppSTLbool is_bounded_array_v
+    syntax keyword cppSTLtype is_unbounded_array
+    syntax keyword cppSTLbool is_unbounded_array_v
+    syntax keyword cppSTLtype is_pointer_interconvertible_base_of
+    syntax keyword cppSTLbool is_pointer_interconvertible_base_of_v
+    syntax keyword cppSTLtype has_strong_structural_equality
+    syntax keyword cppSTLbool has_strong_structural_equality_v
+
+    " version
+    " TODO
 endif
 
 
