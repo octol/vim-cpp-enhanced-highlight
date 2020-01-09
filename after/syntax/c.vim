@@ -35,6 +35,14 @@ if !exists('g:cpp_no_function_highlight')
 endif
 
 " -----------------------------------------------------------------------------
+" Highlight method names.
+" -----------------------------------------------------------------------------
+if exists('g:cpp_member_variable_highlight') && g:cpp_member_variable_highlight && !exists('g:cpp_no_function_highlight')
+    syn match   cCustomMethod "\(\.\|->\)\h\w*\s*(\@=" contains=cCustomDot,cCustomPtr,cCustomParen
+    hi def link cCustomMethod cCustomFunc
+endif
+
+" -----------------------------------------------------------------------------
 "  Highlight POSIX functions.
 " -----------------------------------------------------------------------------
 if exists('g:cpp_posix_standard') && g:cpp_posix_standard
