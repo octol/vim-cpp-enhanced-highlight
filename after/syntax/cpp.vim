@@ -45,7 +45,7 @@ if exists('g:cpp_class_scope_highlight') && g:cpp_class_scope_highlight
     syn match   cCustomScope    "::"
     syn match   cCustomClass    "\w\+\s*::"
                 \ contains=cCustomScope
-    hi def link cCustomClass Function
+    hi def link cCustomClass Type
 endif
 
 " Clear cppStructure and replace "class" and/or "template" with matches

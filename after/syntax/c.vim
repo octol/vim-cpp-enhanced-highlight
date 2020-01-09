@@ -16,22 +16,22 @@
 "   http://stackoverflow.com/questions/736701/class-function-names-highlighting-in-vim
 
 " -----------------------------------------------------------------------------
-"  Highlight function names.
-" -----------------------------------------------------------------------------
-if !exists('g:cpp_no_function_highlight')
-    syn match    cCustomParen    transparent "(" contains=cParen contains=cCppParen
-    syn match    cCustomFunc     "\w\+\s*(\@=" contains=cCustomParen
-    hi def link cCustomFunc  Function
-endif
-
-" -----------------------------------------------------------------------------
 "  Highlight member variable names.
 " -----------------------------------------------------------------------------
 if exists('g:cpp_member_variable_highlight') && g:cpp_member_variable_highlight
     syn match   cCustomDot    "\." contained
     syn match   cCustomPtr    "->" contained
     syn match   cCustomMemVar "\(\.\|->\)\h\w*" contains=cCustomDot,cCustomPtr
-    hi def link cCustomMemVar Function
+    hi def link cCustomMemVar Identifier
+endif
+
+" -----------------------------------------------------------------------------
+"  Highlight function names.
+" -----------------------------------------------------------------------------
+if !exists('g:cpp_no_function_highlight')
+    syn match    cCustomParen    transparent "(" contains=cParen contains=cCppParen
+    syn match    cCustomFunc     "\w\+\s*(\@=" contains=cCustomParen
+    hi def link cCustomFunc  Function
 endif
 
 " -----------------------------------------------------------------------------
