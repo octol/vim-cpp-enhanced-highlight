@@ -46,13 +46,13 @@ endif
 "  Highlight POSIX functions.
 " -----------------------------------------------------------------------------
 if exists('g:cpp_posix_standard') && g:cpp_posix_standard
-	syn keyword cPOSIXFunction 	socket accept bind connect getsockname
-	syn keyword cPOSIXFunction 	listen recv recvfrom recvmsg
-	syn keyword cPOSIXFunction 	send sendto sendmsg setsockopt socketpair
-	syn keyword cPOSIXFunction 	htonl htons ntohl ntohs
-	syn keyword cPOSIXFunction 	inet_ntop inet_pton getaddrinfo
-	syn keyword cPOSIXFunction 	poll select pselect
-	hi def link cPOSIXFunction Function
+  syn keyword cPOSIXFunction 	socket accept bind connect getsockname
+  syn keyword cPOSIXFunction 	listen recv recvfrom recvmsg
+  syn keyword cPOSIXFunction 	send sendto sendmsg setsockopt socketpair
+  syn keyword cPOSIXFunction 	htonl htons ntohl ntohs
+  syn keyword cPOSIXFunction 	inet_ntop inet_pton getaddrinfo
+  syn keyword cPOSIXFunction 	poll select pselect
+hi def link cPOSIXFunction Function
 endif
 
 " -----------------------------------------------------------------------------
@@ -304,6 +304,10 @@ hi def link cBoolean Boolean
 "syn match cOperator	"[][]"
 "
 "" Preprocs
+syn clear cPreProc
+syn region	cPreProc	start="^\s*\zs\(%:\|#\)\s*\(pragma\>\|line\>\|warning\>\|warn\>\|error\>\)" skip="\\$" end="\s" keepend contains=ALLBUT,@cPreProcGroup,@Spell
+syn clear cDefine
+syn region cDefine start="^\s*\zs\(%:\|#\)\s*\(define\|undef\)\>" skip="\\$" end="\s" keepend contains=ALLBUT,@cPreProcGroup,@Spell
 "syn keyword cDefined defined contained containedin=cDefine
 "hi def link cDefined cDefine
 
