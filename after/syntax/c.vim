@@ -286,6 +286,11 @@ hi def link cBoolean Boolean
 "  Additional optional highlighting
 " -----------------------------------------------------------------------------
 
+  
+" Common ANSI-standard functions
+"Highlights data-type _t"
+syn match c_t "\<[a-zA-Z_][a-zA-Z0-9_]*_[t]\>"
+
 " Operators
 "syn match cOperator	"\(<<\|>>\|[-+*/%&^|<>!=]\)="
 "syn match cOperator	"<<\|>>\|&&\|||\|++\|--\|->"
