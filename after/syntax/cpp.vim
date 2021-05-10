@@ -1532,6 +1532,9 @@ if !exists("cpp_no_cpp14")
     syntax keyword cppSTLnamespace literals
     syntax keyword cppSTLnamespace chrono_literals
 
+    " complex
+    syntax keyword cppSTLnamespace complex_literals
+
     " iterator
     syntax keyword cppSTLfunction make_reverse_iterator
 
@@ -1837,6 +1840,7 @@ if !exists("cpp_no_cpp17")
     syntax keyword cppSTLtype u32string_view
     syntax keyword cppSTLfunction remove_prefix
     syntax keyword cppSTLfunction remove_suffix
+    syntax keyword cppSTLnamespace string_view_literals
 
     " system_error
     syntax keyword cppSTLbool is_error_code_enum_v
