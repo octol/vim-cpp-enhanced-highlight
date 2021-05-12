@@ -33,6 +33,11 @@ Highlighting of POSIX functions is disabled by default. To enable set
 let g:cpp_posix_standard = 1
 ```
 
+Highlighting of BSD extension functions is disabled by default. To enable set
+```vim
+let g:cpp_bsd_standard = 1
+```
+
 There are two ways to highlight template functions. Either
 ```vim
 let g:cpp_experimental_simple_template_highlight = 1
