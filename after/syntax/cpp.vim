@@ -60,20 +60,21 @@ endif
 
 syn clear cppStructure
 if s:needs_cppstructure_match == 0
-	syn keyword cppStructure typename namespace template class
+	syn keyword cppStructure typename namespace template class struct
 elseif s:needs_cppstructure_match == 1
 	syn keyword cppStructure typename namespace template
 elseif s:needs_cppstructure_match == 2
-	syn keyword cppStructure typename namespace class
+	syn keyword cppStructure typename namespace class struct
 elseif s:needs_cppstructure_match == 3
 	syn keyword cppStructure typename namespace
 endif
 unlet s:needs_cppstructure_match
 
 
-" Class name declaration
+" Class and struct name declaration
 if exists('g:cpp_class_decl_highlight') && g:cpp_class_decl_highlight
 	syn match cCustomClassKey "\<class\>"
+	syn match cCustomClassKey "\<struct\>"
 	hi def link cCustomClassKey cppStructure
 
 	" Clear cppAccess entirely and redefine as matches
@@ -85,6 +86,8 @@ if exists('g:cpp_class_decl_highlight') && g:cpp_class_decl_highlight
 
 	" Match the parts of a class declaration
 	syn match cCustomClassName "\<class\_s\+\w\+\>"
+				\ contains=cCustomClassKey
+	syn match cCustomClassName "\<struct\_s\+\w\+\>"
 				\ contains=cCustomClassKey
 	syn match cCustomClassName "\<private\_s\+\w\+\>"
 				\ contains=cCustomAccessKey
